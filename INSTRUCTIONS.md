@@ -18,6 +18,10 @@ Now that the server is running, open a new terminal tab with `cmd + t` and start
 npm run client  [x]
 ```
 
+npm install react-router-dom
+npm install react-redux, redux, redux-logger
+
+
 ### ADD NEW FEEDBACK
 
 > NOTE: As a baseline requirement, you must use Redux to store your data across views.
