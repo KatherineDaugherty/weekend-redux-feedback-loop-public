@@ -4,5 +4,15 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+//REDUCER 
+
+
+//STORE 
+
+
+
+
+ReactDOM.render(
+<App />,
+ document.getElementById('root'));
 registerServiceWorker();
