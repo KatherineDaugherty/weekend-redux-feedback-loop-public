@@ -20,6 +20,7 @@ npm run client  [x]
 
 npm install react-router-dom
 npm install react-redux, redux, redux-logger
+body-parser    for POSTs
 
 
 ### ADD NEW FEEDBACK

@@ -1,5 +1,10 @@
+import {useHistory} from 'react-router-dom';
 
 function Feeling() {
+
+const handleSubmit = () => {
+    console.log(`clicked`);
+}
 
     return (
         <>
@@ -10,7 +15,7 @@ function Feeling() {
                     type="text"
                     placeholder="feeling"
                 />
-                <button>Next</button>
+                <button onClick={handleSubmit}>Next</button>
 
 
             </form>
