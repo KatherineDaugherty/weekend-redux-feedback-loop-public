@@ -7,30 +7,38 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
+
+const feedbackObject = {
+    feeling: " ",
+    understanding: "",
+    support: " ",
+    comments:" "
+}
 //REDUCERS
-//list Reducer for SUBMIT BUTTON 
-const listReducer = (state = [], action) => {
-    if (action.type === "ADD_FEEDBACK") {
-        return [...state, action.payload];
+//form Reducer ALL ACTIONS 
+const formReducer = (state = feedbackObject, action) => {
+    if (action.type === "ADD_FEELING") {
+        return {...state, feeling:action.payload};
+    }
+    else if (action.type === "ADD_UNDERSTANDING"){
+        return {...state, understanding: action.payload};
+    }
+    else if (action.type === "ADD_SUPPORT"){
+        return {...state, support: action.payload};
+    }
+    else if (action.type === "ADD_COMMENTS"){
+        return {...state, comments: action.payload};
+    }
+    else if (action.type === "CLEAR"){
+        return feedbackObject;
     }
     return state;
 };
 
-//Feeling input 
-const feelingReducer = (state = [], action) => {
-    if (action.type === "ADD_FEELING") {
-        console.log(`the feeling is ${action.payload}`);
-        // state.push(action.payload);     
-        return [...state, action.payload];
-    }
-    return state;
-}
-
 //STORE 
 const storeInstance = createStore(
     combineReducers({
-        listReducer,
-        feelingReducer
+        formReducer
     }),
     applyMiddleware(logger)
 );
