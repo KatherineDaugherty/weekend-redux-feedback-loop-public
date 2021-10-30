@@ -18,9 +18,12 @@ Now that the server is running, open a new terminal tab with `cmd + t` and start
 npm run client  [x]
 ```
 
-npm install react-router-dom
-npm install react-redux, redux, redux-logger
-body-parser    for POSTs
+npm install 
+react-router-dom
+react-redux
+redux 
+redux-logger
+body-parser  for POSTs
 
 
 ### ADD NEW FEEDBACK

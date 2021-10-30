@@ -13,27 +13,33 @@ import Feeling from '../Feeling/Feeling.jsx';
 import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
+import Review from '../Review/Review';
+
+import { useDispatch } from 'react-redux';
 
 function App() {
 
-//local State 
-// const [feedbackList, setFeedbackList] = useState([]);
+  //local State 
+  const [feedbackList, setFeedbackList] = useState([]);
 
-// useEffect(() => {
-//   fetchFeedback()
-// }, [])
+  const dispatch = useDispatch();
 
-//GET 
-// const fetchFeedback = () => {
-//   axios.get('/feedback')
-//   .then(response => {
-//     setFeedbackList(response.data)
-//   })
-//   .catch(error => {
-//     console.log(`Error getting data`, error);
-//     alert(`could not get data!---`)
-//   })
-// }
+  useEffect(() => {
+    fetchFeedback()
+  }, [])
+
+  //GET 
+  const fetchFeedback = () => {
+    axios.get('/feedback')
+      .then(response => {
+        console.log(`this is the data`, response.data);
+        setFeedbackList(response.data)
+      })
+      .catch(error => {
+        console.log(`Error getting data`, error);
+        alert(`could not get data!---`)
+      })
+  }
 
 
   return (<>
@@ -55,6 +61,10 @@ function App() {
 
       <Route path="/Comments">
         <Comments />
+      </Route>
+
+      <Route path="/Review">
+        <Review />
       </Route>
 
     </Router>
