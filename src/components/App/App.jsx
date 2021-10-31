@@ -59,7 +59,7 @@ function App() {
         </header>
       </div>
 
-      <Route path='/feeling'>
+      <Route path='/' exact >
         <Feeling />
       </Route>
 

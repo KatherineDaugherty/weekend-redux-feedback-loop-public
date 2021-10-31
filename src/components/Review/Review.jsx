@@ -9,6 +9,7 @@ function Review() {
 
     const formData = useSelector((store) => store.formReducer);
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const handleSubmit = () => {
         console.log(`clicked`)

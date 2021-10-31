@@ -6,6 +6,8 @@ import Button from '@mui/material/Button';
 function FeedbackPage() {
 
     const dispatch = useDispatch();
+    const history = useHistory();
+
 
     const handleSubmit = (event) => {
         // event.preventDefault();
@@ -13,7 +15,7 @@ function FeedbackPage() {
         dispatch({
             type: "CLEAR"
         })
-        history.push('/feeling');
+        history.push('/');
     }
 
 
