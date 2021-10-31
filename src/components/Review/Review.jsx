@@ -33,9 +33,10 @@ function Review() {
             <p> Understanding: {formData.understanding} </p>
             <p> Support: {formData.support} </p>
             <p> Comments: {formData.comments} </p>
-            <Button 
-            variant= "outlined"
-            onClick={handleSubmit}> Submit </Button>
+            <Button
+                variant="outlined"
+                onClick={handleSubmit}> Submit 
+                </Button>
         </>
     )
 }

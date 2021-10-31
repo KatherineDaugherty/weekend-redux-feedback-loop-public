@@ -11,10 +11,10 @@ function FeedbackPage() {
 
     const handleSubmit = (event) => {
         // event.preventDefault();
-
         dispatch({
             type: "CLEAR"
         })
+        //send back to first page 
         history.push('/');
     }
 
@@ -22,6 +22,7 @@ function FeedbackPage() {
     return (
         <>
             <h1> Thanks for the feedback </h1>
+            <h4> Your responses have been recorded</h4>
             <Button
                 variant="outlined"
                 onClick={(event) => handleSubmit(event)}>

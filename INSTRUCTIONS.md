@@ -33,8 +33,6 @@ npm install @fontsource/roboto
 
 
 
-
-
 ### ADD NEW FEEDBACK
 
 > NOTE: As a baseline requirement, you must use Redux to store your data across views.

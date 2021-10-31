@@ -46,7 +46,7 @@ const storeInstance = createStore(
 //Provider for redux and react to communicate 
 ReactDOM.render(
     <Provider store={storeInstance}>
-        <App />,
+        <App />
     </Provider>,
     document.getElementById('root'));
 registerServiceWorker();

@@ -39,7 +39,13 @@ function Comments() {
                 />
                 <Button 
                 variant="outlined"
-                type="text">
+                type="text"
+                style={{
+                    width: '30px',
+                    height: '25px',
+                    paddingLeft: '15px',
+                    margin: '15px'
+                }}>
                     Next</Button>
             </form>
         </>

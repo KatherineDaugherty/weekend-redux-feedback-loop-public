@@ -16,13 +16,17 @@ function Supported() {
     //HANDLE SUBMIT FUNCTION 
     const handleSubmit = (event) => {
         event.preventDefault();
+        if (support > 0 && support <= 5) {
 
-        dispatch({
-            type: "ADD_SUPPORT",
-            payload: support
-        })
-        history.push('/comments');
-    }
+            dispatch({
+                type: "ADD_SUPPORT",
+                payload: support
+            })
+            history.push('/comments');
+        } else {
+            alert('Please enter a number 1-5');
+        }
+    };
 
 
     return (
@@ -40,10 +44,16 @@ function Supported() {
                     required
                     onChange={event => setSupport(event.target.value)}
                 />
-                <Button 
-                variant="outlined"
-                 type="submit"> 
-                 Next </Button>
+                <Button
+                    variant="outlined"
+                    type="submit"
+                    style={{
+                        width: '30px',
+                        height: '25px',
+                        paddingLeft: '15px',
+                        margin: '15px'
+                    }}>
+                    Next </Button>
             </form>
         </>
     )
