@@ -1,7 +1,9 @@
-import {useDispatch} from 'react-redux';
-import {useHistory} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import Button from '@mui/material/Button';
 
-function FeedbackPage () {
+
+function FeedbackPage() {
 
     const dispatch = useDispatch();
 
@@ -15,10 +17,13 @@ function FeedbackPage () {
     }
 
 
-    return(
+    return (
         <>
-        <h1> Thanks for the feedback </h1>
-    <button onClick={(event)=> handleSubmit(event)}> Start a new form! </button>
+            <h1> Thanks for the feedback </h1>
+            <Button
+                variant="outlined"
+                onClick={(event) => handleSubmit(event)}>
+                     Start a new form! </Button>
         </>
     )
 }

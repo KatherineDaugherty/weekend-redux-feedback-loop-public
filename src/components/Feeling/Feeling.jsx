@@ -1,6 +1,8 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
+import Button from '@mui/material/Button';
+
 
 function Feeling() {
 
@@ -33,7 +35,10 @@ function Feeling() {
                     required
                     onChange={event => setFeeling(event.target.value)}
                 />
-                <button type="submit"> Onward Ho </button>
+                <Button
+                    variant="outlined"
+                    type="submit">
+                    Next </Button>
             </form>
         </>
     )

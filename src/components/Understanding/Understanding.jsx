@@ -2,6 +2,8 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
+import Button from '@mui/material/Button';
+
 
 function Understanding() {
     const dispatch = useDispatch();
@@ -21,7 +23,7 @@ function Understanding() {
     }
     return (
         <>
-            <form onSubmit={(event) => handleSubmit (event)}>
+            <form onSubmit={(event) => handleSubmit(event)}>
                 <h1> How well are you Understanding the content </h1>
                 <input
                     type="number"
@@ -31,7 +33,10 @@ function Understanding() {
                     required
                     onChange={event => setUnderstanding(event.target.value)}
                 />
-                <button type ="submit"> Next </button>
+                <Button
+                    variant="outlined"
+                    type="submit">
+                    Next </Button>
             </form>
         </>
     )

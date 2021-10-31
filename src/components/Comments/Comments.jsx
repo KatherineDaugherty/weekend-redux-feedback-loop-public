@@ -2,6 +2,8 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
+import Button from '@mui/material/Button';
+
 
 function Comments() {
 
@@ -30,7 +32,10 @@ function Comments() {
                     value={comments}
                     onChange={event => setComments(event.target.value)}
                 />
-                <button>Next</button>
+                <Button 
+                variant="outlined"
+                type="text">
+                    Next</Button>
             </form>
         </>
     )

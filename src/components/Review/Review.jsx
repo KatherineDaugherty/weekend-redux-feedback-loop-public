@@ -1,6 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import Button from '@mui/material/Button';
+
 
 function Review() {
 
@@ -29,7 +31,9 @@ function Review() {
             <p> Understanding: {formData.understanding} </p>
             <p> Support: {formData.support} </p>
             <p> Comments: {formData.comments} </p>
-            <button onClick={handleSubmit}> Submit </button>
+            <Button 
+            variant= "outlined"
+            onClick={handleSubmit}> Submit </Button>
         </>
     )
 }
