@@ -14,6 +14,7 @@ import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import FeedbackPage from '../FeedbackPage/FeedbackPage';
+import Header from '../Header/Header.jsx';
 
 import { useDispatch } from 'react-redux';
 
@@ -52,39 +53,34 @@ function App() {
   return (<>
     <Router>
 
-      <div className='App'>
-        <header className='App-header'>
-          <h1 className='App-title'>Feedback!</h1>
-          <h4>Don't forget it!</h4>
-        </header>
-      </div>
+    <Header/>
 
-      <Route path='/' exact >
-        <Feeling />
-      </Route>
+    <Route path='/' exact >
+      <Feeling />
+    </Route>
 
-      <Route path="/Understanding">
-        <Understanding />
-      </Route>
+    <Route path="/Understanding">
+      <Understanding />
+    </Route>
 
-      <Route path="/Supported">
-        <Supported />
-      </Route>
+    <Route path="/Supported">
+      <Supported />
+    </Route>
 
-      <Route path="/Comments">
-        <Comments />
-      </Route>
+    <Route path="/Comments">
+      <Comments />
+    </Route>
 
-      <Route path="/Review">
-        <Review />
-      </Route>
+    <Route path="/Review">
+      <Review />
+    </Route>
 
-      <Route path="/FeedbackPage">
-        <FeedbackPage />
-      </Route>
+    <Route path="/FeedbackPage">
+      <FeedbackPage />
+    </Route>
 
 
-    </Router>
+  </Router>
   </>
   )
 }
