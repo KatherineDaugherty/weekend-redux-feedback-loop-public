@@ -8,12 +8,12 @@ import './App.css';
 import { Route, HashRouter as Router, Link } from 'react-router-dom';
 
 //import each component into APP
-import Header from '../Header/Header.jsx';
 import Feeling from '../Feeling/Feeling.jsx';
 import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import FeedbackPage from '../FeedbackPage/FeedbackPage';
 
 import { useDispatch } from 'react-redux';
 
@@ -45,9 +45,14 @@ function App() {
   return (<>
     <Router>
 
-      <Header />
+      <div className='App'>
+        <header className='App-header'>
+          <h1 className='App-title'>Feedback!</h1>
+          <h4>Don't forget it!</h4>
+        </header>
+      </div>
 
-      <Route path='/' exact>
+      <Route path='/feeling'>
         <Feeling />
       </Route>
 
@@ -66,6 +71,11 @@ function App() {
       <Route path="/Review">
         <Review />
       </Route>
+
+      <Route path="/FeedbackPage">
+        <FeedbackPage />
+      </Route>
+
 
     </Router>
   </>

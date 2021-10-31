@@ -1,41 +1,39 @@
-import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 
-
 function Feeling() {
 
-    const feelingReducer = useSelector(store => store.feelingReducer);
-    const [newFeeling, setNewFeeling] = useState('');
-    
     const dispatch = useDispatch();
+    const history = useHistory();
+    const [feeling, setFeeling] = useState('');
 
     //HANDLE SUBMIT FUNCTION 
     const handleSubmit = (event) => {
-        console.log(`clicked`);
         event.preventDefault();
 
         dispatch({
             type: "ADD_FEELING",
-            payload: newFeeling
+            payload: feeling
         })
-        setNewFeeling('');
+        //send to next page 
+        history.push('/understanding');
     }
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-
+            <form onSubmit={(event) => handleSubmit(event)}>
                 <h1> How are you feeling today? </h1>
                 {/* Attributes */}
                 <input
-                    type="text"
-                    placeholder="feeling"
-                    value={newFeeling}
-                    onChange={event => setNewFeeling(event.target.value)}
+                    type="number"
+                    min="1"
+                    max="5"
+                    value={feeling}
+                    required
+                    onChange={event => setFeeling(event.target.value)}
                 />
-                <button type="submit"> Next</button>
+                <button type="submit"> Onward Ho </button>
             </form>
         </>
     )
