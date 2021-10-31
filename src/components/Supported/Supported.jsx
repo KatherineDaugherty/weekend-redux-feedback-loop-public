@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+
 
 
 function Supported() {
@@ -27,7 +29,10 @@ function Supported() {
         <>
             <form onSubmit={(event) => handleSubmit(event)}>
                 <h1> How well are you being supported? </h1>
-                <input
+                <TextField
+                    id="standard-basic"
+                    label="Supported?"
+                    variant="standard"
                     type="number"
                     min="1"
                     max="5"

@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+
 
 
 function Understanding() {
@@ -24,8 +26,11 @@ function Understanding() {
     return (
         <>
             <form onSubmit={(event) => handleSubmit(event)}>
-                <h1> How well are you Understanding the content </h1>
-                <input
+                <h1> How well are you understanding the content </h1>
+                <TextField
+                    id="standard-basic"
+                    label="Understanding?"
+                    variant="standard"
                     type="number"
                     min="1"
                     max="5"

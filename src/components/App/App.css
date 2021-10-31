@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+body {
+  text-align: center;
+}
 
 .App-header {
   background-color: #033076;
@@ -21,3 +24,4 @@
 h4 {
   font-style: italic;
 }
+

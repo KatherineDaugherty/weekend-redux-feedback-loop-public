@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+
 
 
 function Comments() {
@@ -27,7 +29,10 @@ function Comments() {
         <>
             <form onSubmit={(event) => handleSubmit(event)}>
                 <h1> Any comments you want to leave? </h1>
-                <input
+                <TextField
+                    id="standard-basic"
+                    label="Comments?"
+                    variant="standard"
                     type="text"
                     value={comments}
                     onChange={event => setComments(event.target.value)}
