@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Button from '@mui/material/Button';
@@ -7,15 +7,22 @@ import Button from '@mui/material/Button';
 
 function Review() {
 
+    //when the reducer has an object. you will need keys. like what I've done 
+    //get information(values) OUT of store.  
+    //useSelector to get information out of redux 
     const formData = useSelector((store) => store.formReducer);
-    const dispatch = useDispatch();
     const history = useHistory();
 
     const handleSubmit = () => {
         console.log(`clicked`)
 
         //POST TO SERVER! 
-        axios.post('/feedback', formData)
+        //package up object and send via POST 
+        axios.post('/api/feedback', formData)
+        // router, req.body ---- needs to be an object. not seperate reducers. 
+        //shorthand = {feeling, understanding, support, comment}
+        
+        //PROMISE 
             .then(response => {
                 console.log(`POSTED`);
                 //ON TOWARDS FEEDBACK  

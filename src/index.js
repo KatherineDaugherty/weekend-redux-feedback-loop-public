@@ -7,33 +7,48 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-
+//Don't need an object for everything... 
+//if you do an object make sure to know the keys first
 const feedbackObject = {
     feeling: " ",
     understanding: "",
     support: " ",
-    comments:" "
+    comments: " "
 }
+
+
 //REDUCERS
 //form Reducer ALL ACTIONS 
 const formReducer = (state = feedbackObject, action) => {
     if (action.type === "ADD_FEELING") {
-        return {...state, feeling:action.payload};
+        //Do stuff.. return a new object
+        //... spread and set the specified key and set to payload
+        return { ...state, feeling: action.payload };
     }
-    else if (action.type === "ADD_UNDERSTANDING"){
-        return {...state, understanding: action.payload};
+    else if (action.type === "ADD_UNDERSTANDING") {
+        return { ...state, understanding: action.payload };
     }
-    else if (action.type === "ADD_SUPPORT"){
-        return {...state, support: action.payload};
+    else if (action.type === "ADD_SUPPORT") {
+        return { ...state, support: action.payload };
     }
-    else if (action.type === "ADD_COMMENTS"){
-        return {...state, comments: action.payload};
+    else if (action.type === "ADD_COMMENTS") {
+        return { ...state, comments: action.payload };
     }
-    else if (action.type === "CLEAR"){
+    else if (action.type === "CLEAR") {
         return feedbackObject;
     }
     return state;
 };
+
+// NEW REDUCER FOR EACH PAGE is an option .. 
+// const understanding = (state = 0, action) => {
+//     switch (action.type) {
+//         case 'SET_FEELING':
+//             return action.payload
+//         default:
+//             return state
+//     }
+// };
 
 //STORE 
 const storeInstance = createStore(

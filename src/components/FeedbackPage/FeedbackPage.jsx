@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 
 function FeedbackPage() {
 
+    //set hooks for dispatch and history 
     const dispatch = useDispatch();
     const history = useHistory();
 
