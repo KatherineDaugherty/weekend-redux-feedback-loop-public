@@ -11,7 +11,7 @@ function FeedbackPage() {
 
 
     const handleSubmit = (event) => {
-        // event.preventDefault();
+        // event.preventDefault();  NOT NEEDED... not a form
         dispatch({
             type: "CLEAR"
         })

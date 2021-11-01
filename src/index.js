@@ -44,7 +44,9 @@ const formReducer = (state = feedbackObject, action) => {
 // const understanding = (state = 0, action) => {
 //     switch (action.type) {
 //         case 'SET_FEELING':
-//             return action.payload
+//             return action.payload;
+//             case 'RESET_FEEDBACK';
+//             return 0;
 //         default:
 //             return state
 //     }

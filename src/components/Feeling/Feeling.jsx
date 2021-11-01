@@ -18,6 +18,7 @@ function Feeling() {
     //HANDLE SUBMIT FUNCTION -- could do inline 
     const handleSubmit = (event) => {
         event.preventDefault();
+        //use with form tag to prevent refresh and submit to server
         if (feeling > 0 && feeling <= 5) {
 
             //data you send is a payload 
@@ -47,10 +48,11 @@ function Feeling() {
                     type="number"
                     min="1"
                     max="5"
-                    value={feeling}
+                    value={feeling} //controlled input- best practice 
                     required
                     // set feeling with each onChange- with local state 
                     onChange={event => setFeeling(event.target.value)}
+                    //setting a local variable 
                 />
                 <Button
                     variant="outlined"

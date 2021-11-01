@@ -18,10 +18,10 @@ function Review() {
 
         //POST TO SERVER! 
         //package up object and send via POST 
-        axios.post('/api/feedback', formData)
+        axios.post('/feedback', formData)
         // router, req.body ---- needs to be an object. not seperate reducers. 
         //shorthand = {feeling, understanding, support, comment}
-        
+
         //PROMISE 
             .then(response => {
                 console.log(`POSTED`);
